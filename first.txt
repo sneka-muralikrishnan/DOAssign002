@@ -198,3 +198,157 @@ Writing objects: 100% (6/6), 478 bytes | 239.00 KiB/s, done.
 Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To https://github.com/sneka-muralikrishnan/DevOpsDemo.git
  * [new branch]      master -> master
+-----------------------------------------------
+Microsoft Windows [Version 10.0.22000.2538]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\I11-05>git config --global --list
+
+C:\Users\I11-05>git config --global user.name "sneka-muralikrishnan"
+
+C:\Users\I11-05>git config --global user.email "mgsneka@gmail.com"
+
+C:\Users\I11-05>git config --global --list
+user.name=sneka-muralikrishnan
+user.email=mgsneka@gmail.com
+
+C:\Users\I11-05>mkdir DevOpsDemo
+
+C:\Users\I11-05>cd DevOpsDemo
+
+C:\Users\I11-05\DevOpsDemo>notepad first.txt
+
+C:\Users\I11-05\DevOpsDemo>git add first.txt
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\I11-05\DevOpsDemo>git init
+Initialized empty Git repository in C:/Users/I11-05/DevOpsDemo/.git/
+
+C:\Users\I11-05\DevOpsDemo>git add first.txt
+
+C:\Users\I11-05\DevOpsDemo>git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   first.txt
+
+
+C:\Users\I11-05\DevOpsDemo>git commit -m "Issue - 1"
+[main (root-commit) 91c50af] Issue - 1
+ 1 file changed, 3 insertions(+)
+ create mode 100644 first.txt
+
+C:\Users\I11-05\DevOpsDemo>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\I11-05\DevOpsDemo>git remote add origin https://github.com/sneka-muralikrishnan/DevOpsDemo.git
+
+C:\Users\I11-05\DevOpsDemo>git remote add -v
+error: unknown switch `v'
+usage: git remote add [<options>] <name> <url>
+
+    -f, --[no-]fetch      fetch the remote branches
+    --[no-]tags           import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --[no-]track <branch>
+                          branch(es) to track
+    -m, --[no-]master <branch>
+                          master branch
+    --[no-]mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+C:\Users\I11-05\DevOpsDemo>git remote -v
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+
+C:\Users\I11-05\DevOpsDemo>notepad first.txt
+
+C:\Users\I11-05\DevOpsDemo>git remote add demo https://github.com/sneka-muralikrishnan/DevOpsDemo.git
+
+C:\Users\I11-05\DevOpsDemo>git remote -v
+demo    https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+demo    https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+
+C:\Users\I11-05\DevOpsDemo>notepad first.txt
+
+C:\Users\I11-05\DevOpsDemo>git commit -m "Issue - 4"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\I11-05\DevOpsDemo>git commit -a -m "Issue - 4"
+[main 164bb92] Issue - 4
+ 1 file changed, 234 insertions(+), 3 deletions(-)
+
+C:\Users\I11-05\DevOpsDemo>git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+C:\Users\I11-05\DevOpsDemo>git push master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\I11-05\DevOpsDemo>git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/sneka-muralikrishnan/DevOpsDemo.git'
+
+C:\Users\I11-05\DevOpsDemo>git remote set-url demo https://github.com/sneka-muralikrishnan/Web-Technology.git
+
+C:\Users\I11-05\DevOpsDemo>git remote -v
+demo    https://github.com/sneka-muralikrishnan/Web-Technology.git (fetch)
+demo    https://github.com/sneka-muralikrishnan/Web-Technology.git (push)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+
+C:\Users\I11-05\DevOpsDemo>git remote rename demo pseudoDemo
+
+C:\Users\I11-05\DevOpsDemo>git remote -v
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+pseudoDemo      https://github.com/sneka-muralikrishnan/Web-Technology.git (fetch)
+pseudoDemo      https://github.com/sneka-muralikrishnan/Web-Technology.git (push)
+
+C:\Users\I11-05\DevOpsDemo>git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/sneka-muralikrishnan/DevOpsDemo.git'
+
+C:\Users\I11-05\DevOpsDemo>git remote remove pseudoDemo
+
+C:\Users\I11-05\DevOpsDemo>git remote -v
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (fetch)
+origin  https://github.com/sneka-muralikrishnan/DevOpsDemo.git (push)
+
+C:\Users\I11-05\DevOpsDemo>git remote add origin https://github.com/sneka-muralikrishnan/DevOpsDemo.git
+error: remote origin already exists.
+
+C:\Users\I11-05\DevOpsDemo>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\I11-05\DevOpsDemo>git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/sneka-muralikrishnan/DevOpsDemo.git'
+
+C:\Users\I11-05\DevOpsDemo>notepad second.txt
+
+C:\Users\I11-05\DevOpsDemo>
